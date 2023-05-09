@@ -1,0 +1,34 @@
+CREATE OR REPLACE FUNCTION public.sp_source_membership_get_all()
+ RETURNS TABLE(sourcemembership character varying, channelcode character varying)
+ LANGUAGE plpgsql
+AS $function$
+-- Test Update Automation
+DECLARE
+BEGIN
+    RETURN QUERY
+        select
+            distinct coalesce(ch.description, '') source_membership,
+            ch.code channel_code
+        from (select membership_id,
+                     card_number,
+                     contact_code,
+                     source_membership,
+                     created_date
+              FROM membership mbr
+              ) mbr
+
+         left join lateral (
+            select code, description
+            from info_code ch
+            where ch.code_type = '135'
+            union all
+            select channel_code code, description
+            from channel
+        ) ch on ch.code = mbr.source_membership
+       where 1 = 1 and (
+      	 ch.description is not null and ch.code is not null
+       );
+END;
+
+$function$
+;
