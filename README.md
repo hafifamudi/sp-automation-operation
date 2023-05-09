@@ -1,4 +1,4 @@
-## Script Automation Internal Tools for update Store Procedure / Function or insert (**ALL CRUD OPERATION**) in all Database 
+## Script Automation Internal Tools for update or insert Store Procedure / Function (**ALL CRUD OPERATION**) in all Database 
 
 </br>
 
