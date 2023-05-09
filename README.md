@@ -10,7 +10,10 @@
     2.  Set the STAGE Environment Value     
         in .env file. It can be `development` or `production`
 
-    3.  Execute main.py 
+    3.  Edit all query list in ./sql folder  
+        to update sp that you want to update
+
+    4.  Ready to go 🚀, execute main.py 
         `python main.py`
 
 
