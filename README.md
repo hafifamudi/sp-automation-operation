@@ -13,3 +13,5 @@
     3.  Execute main.py 
         `python main.py`
 
+
+**Loyalty Team Present, Made with ❤️**
